@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Car Price Prediction</title>
+    </head>
+    <body>
+        <div style="color:white" class="container">
+            <form action="{{url_for('predict')}}" method="post">
+                <h2>Car Price Prediction</h2>
+                <label for="first">Year:</label>
+                <input id ="first" name="Year" type="number"><br><br>
+                <label for="second">Showroom Price in Lakhs:</label>
+                <input id ="second" name="Current_Price" required="required"><br><br>
+                <label for="third">Kilometers Driven:</label>
+                <input id ="third" name="Kilometers" type="number" required="required"><br><br>
+                <label for="fourth">Number of Owners:</label>
+                <input id ="fourth" name="Owners" type="number" required='required'><br><br>
+                <label for="fifth">Fuel Type : </label>
+                <select name="Fuel_Type_Petrol" id="fifth" required="required">
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Diesel">CNG</option>
+                </select><br><br>
+                <label for="sixth">Ownership : </label>
+                <select name="Owner" id="sixth" required="required">
+                    <option value="Indiviual">Indiviual</option>
+                    <option value="Dealer">Dealer</option>
+                </select><br><br>
+                <label for="seventh">Transmission : </label>
+                <select name="Transmission" id="seventh" required="required">
+                    <option value="Manual">Manual</option>
+                    <option value="Automatic">Automatic</option>
+                </select><br><br>
+                <button id="sub" type="submit">Calculate</button> 
+                <button id="res" type="reset">Reset</button>
+            </form>
+             <br><br><h3>{{ prediction_text }}<h3>
+        </div>
+        <style>
+            body {
+                background-color:#4267B2;
+                text-align: center;
+                padding : 0px;
+            }
+            
+            .container {
+                    width: 500px;
+                    clear: both;
+                    padding-left:500px;
+            }
+
+            .container input {
+                    width: 100%;
+                    clear: both;
+            }
+        </style>
+    </body>
+</html>
